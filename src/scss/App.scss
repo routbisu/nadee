@@ -1,0 +1,67 @@
+@import "./reset.scss";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+
+html {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+
+// Colors
+$bg-grey: #f1f1f1;
+$connector-color: #c4c4c4;
+
+.main-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  svg.nadee__edges {
+    width: 100%;
+    height: 100vh;
+    background: $bg-grey;
+    path.nadee__edges-path {
+      fill: none;
+      stroke: #bbb;
+      stroke-width: 2;
+    }
+  }
+
+  .nadee__nodes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .box {
+      position: absolute;
+      padding: 10px 15px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      user-select: none;
+      cursor: pointer;
+
+      .connector {
+        background: $connector-color;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        cursor: crosshair;
+
+        &.connector-right {
+          right: -5px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &.connector-left {
+          left: -5px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
